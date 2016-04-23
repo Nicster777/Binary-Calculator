@@ -10,6 +10,7 @@ import javax.swing.*;
 
 public class Calculator {
 	
+	private String version = "v0.0.1";
 	
 	private JFrame f;	
 	private JPanel p;
@@ -21,7 +22,7 @@ public class Calculator {
 	}
 	
 	public void gui() {
-		f = new JFrame("Calculator");
+		f = new JFrame("Calculator " + version);
 		f.setVisible(true);
 		f.setSize(500, 500);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
