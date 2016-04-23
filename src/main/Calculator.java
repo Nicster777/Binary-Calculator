@@ -10,7 +10,9 @@ public class Calculator {
 		
 		int[] binary = new int[8]; // 0 0 0 0 0 0 0 0
 		
-		int num, numOut = 0, preNum;
+		int numOut = 0, preNum, num;
+
+		//byte mask = (byte) 128, test;
 		
 		System.out.println("Enter a number for conversion: ");
 		num = sc.nextInt();
@@ -18,12 +20,12 @@ public class Calculator {
 		preNum = num;
 		
 		while (num > 0) {
-			while (num > 128) {
-				num -= 128;
+			while (num > 255) {
+				num -= 255;
 				numOut++;
 			}
 			
-			if (num == 128) {
+			if (num >= 128) {
 				binary[0] = 1;
 				num -= 128;
 			} else if (num >= 64) {
@@ -50,7 +52,20 @@ public class Calculator {
 			}
 		}
 		
-		if(preNum > 128) {
+		/*while (mask != 0) {
+			test = (byte) (num & mask);
+			
+			if (test != 0) {
+				System.out.print("1");
+			} else {
+				System.out.print("0");
+			}
+			
+			mask >>= 1;
+			
+		}*/
+		
+		if(preNum > 255) {
 			for(int i = 0; i < numOut; i++) {
 				System.out.print("11111111 ");
 			}
