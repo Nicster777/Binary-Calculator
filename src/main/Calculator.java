@@ -5,25 +5,20 @@ import java.util.Scanner;
 public class Calculator {
 
 	public static void main (String[] args) {
-		
 		Scanner sc = new Scanner(System.in);
 		
-		int[] binary = new int[8]; // 0 0 0 0 0 0 0 0
-		
-		int numOut = 0, preNum, num;
+	
+		long mask = 0x800000, test;
 
-		//byte mask = (byte) 128, test;
-		
 		System.out.println("Enter a number for conversion: ");
-		num = sc.nextInt();
+
+		long num = sc.nextInt();
+		//preNum = num;
 		
-		preNum = num;
 		
-		while (num > 0) {
-			while (num > 255) {
-				num -= 255;
-				numOut++;
-			}
+		
+		/*while (num > 0) {
+			
 			
 			if (num >= 128) {
 				binary[0] = 1;
@@ -50,24 +45,28 @@ public class Calculator {
 				binary[7] = 1;
 				num -= 1;
 			}
-		}
-		
-		/*while (mask != 0) {
-			test = (byte) (num & mask);
-			
-			if (test != 0) {
-				System.out.print("1");
-			} else {
-				System.out.print("0");
-			}
-			
-			mask >>= 1;
-			
 		}*/
 		
-		if(preNum > 255) {
+		
+		int x = 0;
+		
+		while (mask != 0) {
+			test = (num & mask);
+			String out = (test != 0) ? "1" : "0";
+			System.out.print(out);
+			mask = mask >> 1;
+			x++;
+			if (x == 8) {
+				System.out.print(" ");
+				x = 0;
+			}
+			
+		}
+		
+		
+		/*if(preNum > 255) {
 			for(int i = 0; i < numOut; i++) {
-				System.out.print("11111111 ");
+				
 			}
 			
 			for(int i = 0; i < 8; i++) {
@@ -77,7 +76,7 @@ public class Calculator {
 			for(int i = 0; i < 8; i++) {
 				System.out.print(binary[i]);
 			}
-		}
+		}*/
 		
 		sc.close();
 	}
