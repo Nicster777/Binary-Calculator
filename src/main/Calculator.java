@@ -23,7 +23,6 @@ public class Calculator {
 				x = 0;
 			}
 		}
-
 		sc.close();
 	}
 }
