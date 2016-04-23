@@ -16,6 +16,8 @@ public class Calculator {
 	private JPanel p;
 	private JButton b1;
 	private JLabel lab;
+	private JTextArea out;
+	private JTextField numIn;
 	
 	public Calculator() {
 		gui();
@@ -30,11 +32,10 @@ public class Calculator {
 		p = new JPanel(new GridBagLayout());
 		p.setBackground(Color.LIGHT_GRAY);
 		
-		b1 = new JButton("Click Me");
-		lab = new JLabel("DONT CLICk ME");
+		b1 = new JButton("Calculate");
+		lab = new JLabel("Enter a Number: ");
 		
-		GridBagConstraints c = new GridBagConstraints();
-		
+		GridBagConstraints c = new Gria
 		c.insets = new Insets(10, 10, 10, 10);
 		
 		c.gridx = 0;
