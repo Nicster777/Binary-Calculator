@@ -35,7 +35,7 @@ public class Calculator {
 		b1 = new JButton("Calculate");
 		lab = new JLabel("Enter a Number: ");
 		
-		GridBagConstraints c = new Gria
+		GridBagConstraints c = new GridBagConstraints();
 		c.insets = new Insets(10, 10, 10, 10);
 		
 		c.gridx = 0;
