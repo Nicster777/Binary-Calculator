@@ -10,6 +10,8 @@ public class Calculator {
 		
 		int[] binary = new int[8]; // 0 0 0 0 0 0 0 0
 		
+		boolean broke = false;
+		
 		int num;
 		
 		
@@ -17,7 +19,14 @@ public class Calculator {
 		num = sc.nextInt();
 		
 		while (num > 0) {
-			if (num >= 128) {
+			
+			if (num > 128) {
+				System.out.println("Enter a number equal to or smaller than 128.");
+				broke = true;
+				break;
+			}
+			
+			if (num == 128) {
 				binary[0] = 1;
 				num -= 128;
 			} else if (num >= 64) {
@@ -45,7 +54,9 @@ public class Calculator {
 		}
 		
 		for(int i = 0; i < 8; i++) {
-			System.out.print(binary[i]);
+			if (!broke) {
+				System.out.print(binary[i]);
+			}
 		}
 		
 		sc.close();
