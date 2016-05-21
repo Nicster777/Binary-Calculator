@@ -10,18 +10,21 @@ import javax.swing.*;
 
 public class Calculator {
 	
+	private String version = "v0.0.1";
 	
 	private JFrame f;	
 	private JPanel p;
 	private JButton b1;
 	private JLabel lab;
+	private JTextArea out;
+	private JTextField numIn;
 	
 	public Calculator() {
 		gui();
 	}
 	
 	public void gui() {
-		f = new JFrame("Calculator");
+		f = new JFrame("Calculator " + version);
 		f.setVisible(true);
 		f.setSize(500, 500);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,11 +32,10 @@ public class Calculator {
 		p = new JPanel(new GridBagLayout());
 		p.setBackground(Color.LIGHT_GRAY);
 		
-		b1 = new JButton("Click Me");
-		lab = new JLabel("DONT CLICk ME");
+		b1 = new JButton("Calculate");
+		lab = new JLabel("Enter a Number: ");
 		
 		GridBagConstraints c = new GridBagConstraints();
-		
 		c.insets = new Insets(10, 10, 10, 10);
 		
 		c.gridx = 0;
