@@ -14,33 +14,10 @@ public class Window {
 	private JTextField numberField;
 	private JTextField binaryField;
 
-	/**
-	 * Launch the application.
-	 */
-	/*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Window window = new Window();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	 */
-	/**
-	 * Create the application.
-	 */
 	public Window(String title) {
 		initialize(title);
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize(String title) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -49,7 +26,6 @@ public class Window {
 		frame.getContentPane().setLayout(null);
 		
 		JButton ConverButton = new JButton("Convert");
-		
 
 		ConverButton.setBounds(185, 127, 89, 23);
 		frame.getContentPane().add(ConverButton);
@@ -77,7 +53,6 @@ public class Window {
 		frame.setTitle(title);
 		frame.setSize(300, 200);
 		
-		
 		ConverButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
@@ -88,11 +63,7 @@ public class Window {
 				} catch (Exception e) {
 					e.printStackTrace(System.out);
 				}
-				
-				
 			}
 		});
-		
-		
 	}
 }
