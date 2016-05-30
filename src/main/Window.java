@@ -60,8 +60,8 @@ public class Window {
 				
 				try {
 					binaryField.setText(con.convert(Integer.parseInt(numberField.getText())));
-				} catch (Exception e) {
-					e.printStackTrace(System.out);
+				} catch (NumberFormatException e) {
+					System.out.println("Invalid Input -- '" + numberField.getText() + "' is not a valid integer.");
 				}
 			}
 		});
